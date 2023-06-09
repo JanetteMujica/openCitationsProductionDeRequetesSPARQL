@@ -136,7 +136,7 @@ SELECT ?omid ?id ?title ?pub_date {   # Ajout de ?omid
 LIMIT 20
 ```
 
-**4) Ma quatrième requête consiste à obtenir les *author* à travers les agents reliés à chaque OMID extrait précédemment **
+**4) Ma quatrième requête consiste à obtenir les *author* à travers les agents reliés à chaque OMID extrait précédemment**
 
 J'ai fait une requête à ChatGPT d'adapter le code prédemment considérant que: 
 
