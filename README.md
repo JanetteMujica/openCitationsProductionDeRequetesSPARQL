@@ -1,6 +1,6 @@
 # Analyse du projet *[Open Citations](https://opencitations.net/)* utilisant les technologies du web sémantique, du Linked Open Data et production de requêtes SPARQL
 
-
+>Réalisée par Janette Mujica-Zepeda
 >Dans le cadre de l'atelier HNU6054 Web Sémantique et données<br>
 >À l'Université de Montréal<br>
 >Présenté à David Valentine<br>
