@@ -114,7 +114,10 @@ SELECT ?id ?title ?pub_date {
 LIMIT 50
 ```
 **3) Ma troisième requête consiste à extraire tous les documents avec doi, title et pub_date et puis, ajouter l'OMID et aussi trier les résultats par ordre décroissant, du plus récent au plus vieux.**
+
 J’ai choisi d’ajouter l’OMID car je veux être en mesure d’obtenir l'entité *author* puisqu'il est associé à l'OMID. [Selon la description du dataset](https://opencitations.net/meta) : « *The entities subject to deduplication and associated with an OMID are identifiers (abbr. id), agent roles (i.e., authors, editors, publishers, abbr. ar), responsible agents (i.e., people and organisations, abbr. ra), resource embodiments (i.e., pages, abbr. re), venues, volumes, and issues (which are all bibliographic resources, abbr. br).*»
+
+Je n'ai pas pu obtenir de réponse avec *DER BY DESC(?pub_date)* Je l'ai donc mis en commentaire.
 
 ```
 PREFIX datacite: <http://purl.org/spar/datacite/>
@@ -131,6 +134,45 @@ SELECT ?omid ?id ?title ?pub_date {   # Ajout de ?omid
   BIND(STR(?publicationDate) AS ?pub_date)
     BIND(STRAFTER(str(?br), "oc/meta/") AS ?omid)   # Extrait l'ID de la ressource après "oc/meta/"
 }
-ORDER BY DESC(?pub_date)   # Trie les résultats par ordre décroissant de la date de publication
-LIMIT 50
+#ORDER BY DESC(?pub_date)   # Trie les résultats par ordre décroissant de la date de publication
+LIMIT 20
 ```
+
+**4) Ma quatrième requête consiste à obtenir les *author* à travers les agents reliés à chaque OMID extrait précédemment **
+
+J'ai fait une requête à ChatGPT d'adapter le code prédemment considérant que: 
+
+**Metadata elements that may be associated with a responsible agent’s role**
+- has role type: thing
+The specific type of role under consideration (e.g. author, editor or publisher).
+- is held by: responsible agent (ra) 
+
+et
+
+**Metadata elements that may be associated with a responsible agent**
+- has name string: literal
+The name of an agent (for people, usually in the format: given name followed by family
+name, separated by a space).
+
+```
+PREFIX datacite: <http://purl.org/spar/datacite/>         
+PREFIX dcterms: <http://purl.org/dc/terms/>              
+PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>   
+PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>   
+PREFIX oc: <http://w3id.org/oc/ontology/>
+
+SELECT ?omid ?id ?title ?pub_date ?author_name {
+  ?br datacite:hasIdentifier ?identifier ;
+     dcterms:title ?title ;
+     prism:publicationDate ?publicationDate .  
+  ?identifier literal:hasLiteralValue ?literalValue .     
+  BIND(CONCAT("doi:", ?literalValue) AS ?id) 
+  BIND(STR(?publicationDate) AS ?pub_date)
+  ?omid oc:hasResponsibleAgent ?ra .                       # Relation entre l'OMID et l'agent responsable
+  ?ra oc:hasRoleType ?role_type ;                          # Relation entre l'agent responsable et le type de rôle
+     oc:hasNameString ?author_name .                       # Relation entre l'agent responsable et le nom d'auteur
+  FILTER (?role_type = oc:author)                          # Filtre pour ne récupérer que les auteurs
+}
+LIMIT 20
+```
+Ce code de retourne rien. J'ai donc revisé la documentation pour 
