@@ -18,5 +18,12 @@ Le projet d'OpenCitations est de collecter, publier et préserver de manière ou
 
 ### **3.**    Expliquez comment les technologies du web sémantique apportent une solution pertinente au projet en vous intéressant notamment à l’ontologie et aux vocabulaires utilisés
 
+OpenCitation utilise l’ontologie [*Open Citation Ontology*](https://opencitations.github.io/ontology/current/ontology.html) pour modéliser les métadonnées bibliographiques. Les vocabulaires utilisés dans le web sémantique sont des ensembles de termes et de relations prédéfinis. Cette ontologie décrit, entre-autre, auteurs, articles, revues, et citations. Elle définit ces termes, leurs significations et les liens entre eux. Elle rend possible et facilite l’exploration des relations entre les différentes entités bibliographiques. [Peroni (2020)](https://direct.mit.edu/qss/article/1/1/428/15580/OpenCitations-an-infrastructure-organization-for)
+
+De plus, OpenCitation utilise des standards du web sémantique tels que RDF (Resource Description Framework) et OWL (Web Ontology Language). Les données peuvent être alors comprises par la machine et ensuite réutilisées par les chercheurs.[Peroni (2020)](https://direct.mit.edu/qss/article/1/1/428/15580/OpenCitations-an-infrastructure-organization-for)
+
+Plus précisément, l’ontologie, OpenCitation, contient des Classes, des Object Properties, Data Properties, Named individuals, Annotation Properties et des Namespace Declarations pour lesquelles 
+
+
 ### **4.**    Produire au moins cinq exemples de requêtes SPARQL suffisamment complexes et intéressantes pour démontrer l’intérêt de la ressource. Vous pouvez accompagner ces requêtes d’un court texte de présentation.
 
