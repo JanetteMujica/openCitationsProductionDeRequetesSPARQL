@@ -62,3 +62,4 @@ Par exemple, le premier article de journal traité a l'OMID br/0601 (l'URI compl
 -	et 060 correspond au préfixe du fournisseur (c'est-à-dire OpenCitations Meta)
 -	1 indique qu'il s'agit de la première ressource bibliographique jamais créée dans l'index.
 
+**1) Ma première requête consiste à chercher le premier article traité avec l’OMID : https://w3id.org/oc/meta/br/0601. J’ai choisi cette requête car l’OMID est fourni dans la documentation du [Dataset de Meta](https://opencitations.net/meta).**
