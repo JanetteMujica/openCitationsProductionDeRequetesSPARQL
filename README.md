@@ -24,10 +24,10 @@ De plus, OpenCitation utilise des standards du web sémantique tels que RDF (Res
 
 Plus précisément,  l’ontologie [*Open Citation Ontology*](https://opencitations.github.io/ontology/current/ontology.html) contient des [*Classes*](https://opencitations.github.io/ontology/current/ontology.html#classes), des [*Object Properties*](https://opencitations.github.io/ontology/current/ontology.html#objectproperties), des [*Data Properties*](https://opencitations.github.io/ontology/current/ontology.html#dataproperties), des [*Named individuals*](https://opencitations.github.io/ontology/current/ontology.html#namedindividuals), des [*Annotation Properties*](https://opencitations.github.io/ontology/current/ontology.html#annotationproperties) et des [*Namespace Declarations*](https://opencitations.github.io/ontology/current/ontology.html#namespacedeclarations). 
 
-Le shéma du [DataModel](http://opencitations.net/model)
+**Le shéma du [DataModel](http://opencitations.net/model)**
 ![model](https://github.com/JanetteMujica/openCitationsProductionDeRequetesSPARQL/assets/112497575/3f273345-39e2-42a7-bc5a-6ac4eefc3161)
 
-[The OpenCitations Data Model](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876)
+**[The OpenCitations Data Model](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876)**
 
 ### **4.**    Produire au moins cinq exemples de requêtes SPARQL suffisamment complexes et intéressantes pour démontrer l’intérêt de la ressource. Vous pouvez accompagner ces requêtes d’un court texte de présentation.
 
