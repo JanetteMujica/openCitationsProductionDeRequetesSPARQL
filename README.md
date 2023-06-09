@@ -72,6 +72,40 @@ SELECT ?p ?entity WHERE {
   ?omid ?p ?entity .
 }
 ```
-Ensuite, j'ai tenté de chercher sans succès de chercher l’auteur de ce premier document. Comme je n'arrivais pas à avancer dans le travail, j'ai commencé à travailler avec ChatGPT.
+Ensuite, j'ai tenté sans succès de chercher l’auteur de ce premier document. Comme je n'arrivais pas à avancer dans le travail, j'ai commencé à travailler avec ChatGPT pour m'aider à construire des requêtes. J'ai copié le code par défault du endpoint, puis demander de m'extraire tous les documents avec doi, title et pub_date.
 
+**REQUÊTE PAR DÉFAULT DANS LE ENDPOINT**
+```
+PREFIX datacite: <http://purl.org/spar/datacite/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
+PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
+SELECT ?id ?title ?pub_date {
+    ?identifier literal:hasLiteralValue "10.1162/qss_a_00023".
+    ?br datacite:hasIdentifier ?identifier;
+       dcterms:title ?title;
+         prism:publicationDate ?publicationDate.
+       BIND(STR(?publicationDate) AS ?pub_date)
+    BIND((CONCAT("doi:", "10.1162/qss_a_00023")) AS ?id)
+}
+```
 
+**2) Ma deuxième requête consiste à extraire tous les documents avec doi, title et pub_date. J’ai limité ma requête à 50 parce que c’était trop demandant pour ma machine.**
+
+```
+PREFIX datacite: <http://purl.org/spar/datacite/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
+PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
+
+SELECT ?id ?title ?pub_date {
+    ?br datacite:hasIdentifier ?identifier ;    # On récupère les identifiants des ressources bibliographiques
+       dcterms:title ?title ;                   # On récupère les titres des ressources bibliographiques
+       prism:publicationDate ?publicationDate .  # On récupère les dates de publication des ressources bibliographiques
+    ?identifier literal:hasLiteralValue ?literalValue .  # On récupère les valeurs littérales des identifiants
+    BIND(CONCAT("doi:", ?literalValue) AS ?id)  # On construit les identifiants au format "doi:xxxxxx"
+    BIND(STR(?publicationDate) AS ?pub_date)    # On convertit la date de publication en chaîne de caractères
+}
+LIMIT 50
+
+```
