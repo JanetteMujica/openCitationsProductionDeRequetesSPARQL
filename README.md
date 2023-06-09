@@ -173,4 +173,32 @@ SELECT ?omid ?id ?title ?pub_date ?author_name {
 }
 LIMIT 20
 ```
-Ce code de retourne rien. J'ai tenté d'adapter en revisant la documentation (shéma et article), mais je n'arrive à rien de concluant.
+le code plus haut ne retourne rien. J'ai tenté d'adapter en revisant la documentation (shéma et article), mais je n'arrive à rien de concluant. 
+
+**5) J'ai changé un peu de stratégie pour ma cinquième requête en me basant sur un post de blog intitulé [Querying the OpenCitations Corpus](https://opencitations.wordpress.com/2017/05/06/querying-the-opencitations-corpus/)**
+
+Il faut utiliser le endpoint [COCI SPARQL](http://opencitations.net/sparql)
+
+Je veux cette article :
+https://doi.org/10.1002/1097-0142(20010815)92:4<796::AID-CNCR1385>3.0.CO;2-3
+
+Avec DOI:
+10.1002/1097-0142
+
+```
+PREFIX cito: <http://purl.org/spar/cito/>                 
+PREFIX dcterms: <http://purl.org/dc/terms/>               
+PREFIX datacite: <http://purl.org/spar/datacite/>         
+PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
+
+SELECT ?citing ?title WHERE {
+  ?id a datacite:Identifier ;                              # La ressource a un type Identifier
+    datacite:usesIdentifierScheme datacite:doi ;           # La ressource utilise le schéma d'identifiant DOI
+    literal:hasLiteralValue "10.1038/227680a0" .           # La valeur littérale de l'identifiant est "10.1038/227680a0"
+  ?br 
+    datacite:hasIdentifier ?id ;                           # La ressource bibliographique a l'identifiant correspondant
+    ^cito:cites ?citing .                                  # La ressource bibliographique est citée par ?citing
+  ?citing dcterms:title ?title                             # Le ?citing a un titre défini par dcterms:title
+}
+```
+Le code partagé par le blog ne fontionne pas.
