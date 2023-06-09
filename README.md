@@ -6,7 +6,8 @@
 >Présenté à David Valentine<br>
 
 
-(Description de l'exercice)[https://davvalent.github.io/hnu6054/exercice-02/]
+[Description de l'exercice](https://davvalent.github.io/hnu6054/exercice-02/)
+
 
 ### **1.**    Identifier et choisir un projet lié au web sémantique ou au LOD qui dispose d’un SPARQL endpoint
 
