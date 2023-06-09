@@ -50,3 +50,15 @@ On y détaille aussi comment faire correspondre les attributs et les propriété
 
 ### **4.**    Produire au moins cinq exemples de requêtes SPARQL suffisamment complexes et intéressantes pour démontrer l’intérêt de la ressource. Vous pouvez accompagner ces requêtes d’un court texte de présentation.
 
+Pour les cinq requêtes, je vais utiliser le [OpenCitations Meta SPARQL endpoint](https://opencitations.net/meta/sparql). Ce endpoint fournit les métadonnées bibliographiques de toutes les publications incluses dans les index OpenCitations.
+
+Comme expliqué dans le [Dataset de Meta](https://opencitations.net/meta), Chaque entité dans OpenCitations Meta est assignée un identifiant (OMID). 
+
+L'OMID a une structure 
+**[[entity_type_abbreviation]]/[[supplier_prefix]][[sequential_number]]**.
+
+Par exemple, le premier article de journal traité a l'OMID br/0601 (l'URI complet est https://w3id.org/oc/meta/br/0601),
+-	où br est l'abréviation de ressource bibliographique, 
+-	et 060 correspond au préfixe du fournisseur (c'est-à-dire OpenCitations Meta)
+-	1 indique qu'il s'agit de la première ressource bibliographique jamais créée dans l'index.
+
