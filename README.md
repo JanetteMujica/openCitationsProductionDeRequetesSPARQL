@@ -14,9 +14,7 @@ J'ai choisi *[Open Citations](https://opencitations.net/)* disposant de plusieur
 
 ### **2.**    Présenter le projet et ses objectifs généraux
 
-Le projet d'OpenCitations est de collecter, publier et préserver de manière ouverte des métadonnées bibliographiques et de citations académiques. L’objectif est de fournir un accès gratuit dans le but de favoriser l'accès ouvert et la reproductibilité de la recherche. 
-
-[Perroni (2022)](https://zenodo.org/record/6976670)
+Le projet d'OpenCitations est de collecter, publier et préserver de manière ouverte des métadonnées bibliographiques et de citations académiques. L’objectif est de fournir un accès gratuit dans le but de favoriser l'accès ouvert et la reproductibilité de la recherche. [Perroni (2022)](https://zenodo.org/record/6976670)
 
 ### **3.**    Expliquez comment les technologies du web sémantique apportent une solution pertinente au projet en vous intéressant notamment à l’ontologie et aux vocabulaires utilisés
 
