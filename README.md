@@ -27,7 +27,26 @@ Plus précisément,  l’ontologie [*Open Citation Ontology*](https://opencitati
 **Le shéma du [DataModel](http://opencitations.net/model)**
 ![model](https://github.com/JanetteMujica/openCitationsProductionDeRequetesSPARQL/assets/112497575/3f273345-39e2-42a7-bc5a-6ac4eefc3161)
 
-**[The OpenCitations Data Model](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876)** détaille les ressources RDF des ensembles de données OpenCitation qui ont 5 niveaux de metadata: *Dataset metadata, Bibliographic entity metadata, Identifiers, Pronenance metadata et Virtual entities.* Au sein des ensembles de données, différentes classes d'informations (différents types d'entités) sont identifiées et décrites à l'aide de noms uniques et, généralement, sont accompagnées de sigles à deux lettres ("*short names*"), par exemple *Bibliographic resource* (*short: br*). [Daquino (2023)](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876). 
+**[The OpenCitations Data Model](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876)** détaille les ressources RDF des ensembles de données OpenCitation qui ont 5 niveaux de metadata: *Dataset metadata, Bibliographic entity metadata, Identifiers, Pronenance metadata et Virtual entities.* Au sein des ensembles de données, différentes classes d'informations (différents types d'entités) sont identifiées et décrites à l'aide de noms uniques et, généralement, sont accompagnées de sigles à deux lettres ("*short names*"), par exemple *Bibliographic resource* (*short: br*). On voit comment établir les relations, par exemple:
+
+**Metadata elements that may be associated with a responsible agent’s role**
+● has role type: thing
+The specific type of role under consideration (e.g. author, editor or publisher).
+● is held by: responsible agent (ra) 
+
+et
+
+**Metadata elements that may be associated with a responsible agent**
+● has name string: literal
+The name of an agent (for people, usually in the format: given name followed by family
+name, separated by a space).
+
+On y détaille aussi comment faire correspondre les attributs et les propriétés avec les entités liées à OWL, par exemple on utilise: foaf: http://xmlns.com/foaf/0.1/ pour
+
+**Bibliographic entities**
+● Responsible agent: foaf:Agent
+
+[Daquino (2023)](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876). 
 
 ### **4.**    Produire au moins cinq exemples de requêtes SPARQL suffisamment complexes et intéressantes pour démontrer l’intérêt de la ressource. Vous pouvez accompagner ces requêtes d’un court texte de présentation.
 
