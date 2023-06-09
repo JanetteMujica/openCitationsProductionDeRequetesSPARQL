@@ -173,4 +173,4 @@ SELECT ?omid ?id ?title ?pub_date ?author_name {
 }
 LIMIT 20
 ```
-Ce code de retourne rien. J'ai donc revisé la documentation pour 
+Ce code de retourne rien. J'ai tenté d'adapter en revisant la documentation (shéma et article), mais je n'arrive à rien de concluant.
