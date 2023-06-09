@@ -1,9 +1,11 @@
 # Analyse du projet *Open Citations* utilisant les technologies du web sémantique, du Linked Open Data et production de requêtes SPARQL
-<br>
+
+
 >Dans le cadre de l'atelier HNU6054 Web Sémantique et données<br>
 >À l'Université de Montréal<br>
 >Présenté à David Valentine<br>
-<br>
+
+
 (Description de l'exercice)[https://davvalent.github.io/hnu6054/exercice-02/]
 
 ### 1.	Identifier et choisir un projet lié au web sémantique ou au LOD qui dispose d’un SPARQL endpoint
