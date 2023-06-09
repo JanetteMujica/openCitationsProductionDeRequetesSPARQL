@@ -27,7 +27,7 @@ Plus précisément,  l’ontologie [*Open Citation Ontology*](https://opencitati
 **Le shéma du [DataModel](http://opencitations.net/model)**
 ![model](https://github.com/JanetteMujica/openCitationsProductionDeRequetesSPARQL/assets/112497575/3f273345-39e2-42a7-bc5a-6ac4eefc3161)
 
-**[The OpenCitations Data Model](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876)**
+**[The OpenCitations Data Model](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876)** détaille les ressources RDF des ensembles de données OpenCitation qui ont 5 niveaux de metadata: *Dataset metadata, Bibliographic entity metadata, Identifiers, Pronenance metadata et Virtual entities.* Au sein des ensembles de données, différentes classes d'informations (différents types d'entités) sont identifiées et décrites à l'aide de noms uniques et, généralement, sont accompagnées de sigles à deux lettres ("*short names*"), par exemple *Bibliographic resource* (*short: br*). [Daquino (2023)](https://figshare.com/articles/online_resource/Metadata_for_the_OpenCitations_Corpus/3443876). 
 
 ### **4.**    Produire au moins cinq exemples de requêtes SPARQL suffisamment complexes et intéressantes pour démontrer l’intérêt de la ressource. Vous pouvez accompagner ces requêtes d’un court texte de présentation.
 
