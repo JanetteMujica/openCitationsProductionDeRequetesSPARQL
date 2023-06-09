@@ -80,12 +80,20 @@ PREFIX datacite: <http://purl.org/spar/datacite/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
 PREFIX prism: <http://prismstandard.org/namespaces/basic/2.0/>
+
 SELECT ?id ?title ?pub_date {
+    # Filtrer l'identifiant spécifique "10.1162/qss_a_00023"
     ?identifier literal:hasLiteralValue "10.1162/qss_a_00023".
+    
+    # Récupérer les informations de la ressource bibliographique correspondant à l'identifiant
     ?br datacite:hasIdentifier ?identifier;
        dcterms:title ?title;
-         prism:publicationDate ?publicationDate.
-       BIND(STR(?publicationDate) AS ?pub_date)
+       prism:publicationDate ?publicationDate.
+    
+    # Convertir la date de publication en chaîne de caractères
+    BIND(STR(?publicationDate) AS ?pub_date)
+    
+    # Construire l'identifiant au format "doi:xxxxxx"
     BIND((CONCAT("doi:", "10.1162/qss_a_00023")) AS ?id)
 }
 ```
