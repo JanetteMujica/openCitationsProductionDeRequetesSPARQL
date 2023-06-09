@@ -10,6 +10,7 @@
 
 
 ### **1.**    Identifier et choisir un projet lié au web sémantique ou au LOD qui dispose d’un SPARQL endpoint
+J'ai choisi *[Open Citations](https://opencitations.net/)* disposant de plusieurs *SPARQL endpoint*. J'explorerai plus précisemment [OpenCitations Meta SPARQL endpoint](https://opencitations.net/meta/sparql) dont la base de données est nommée [OpenCitations Meta](https://opencitations.net/meta).
 
 ### **2.**    Présenter le projet et ses objectifs généraux
 
